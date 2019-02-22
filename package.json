@@ -1,0 +1,22 @@
+{
+  "name": "m-duitang-spa",
+  "version": "1.0.0",
+  "description": "移动M站的开发环境与功能实现",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "del": "^3.0.0",
+    "gulp": "3.9.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1",
+    "http-proxy-middleware": "^0.19.1",
+    "string-loader": "^0.0.1",
+    "webpack-stream": "^5.2.1"
+  }
+}

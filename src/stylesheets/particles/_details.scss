@@ -1,0 +1,158 @@
+
+#main {
+    display: flex;
+    align-items: stretch; 
+}
+
+#app-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    .film-controls {
+        flex-shrink: 0;
+    }
+    .film-list {
+        flex-grow: 1; flex-shrink: 1;
+        width: 100%;
+        overflow: auto;
+    }
+
+}
+
+
+/* 内容顶部控制区域 */
+
+.conten-list__title{
+    position: relative;
+    padding: 18px 12px 6px 24px;
+    background-size: cover;
+    text-align: center;
+}
+
+.conten-list__title--bg{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .35;
+}
+.conten-list__title__category{
+    z-index: 1;
+    position: relative;
+    font-size: 0;
+}
+.conten-list__title__category a{
+    margin: 0 12px 12px 0;
+    padding: 0 9px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 34px;
+    display: inline-block;
+    color: #fff;
+}
+
+.controlflow-masned {
+    zoom: 1;
+    overflow: hidden;
+    visibility: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.controlflow-pcont {
+    height: 0;
+}
+.stpics{
+    position: relative;
+    width: 296px;
+    visibility: visible;
+    height: 3603px;
+}
+.controlflow-masned li{
+    list-style: none;
+    float: left;
+}
+.controlflow-masned li:nth-of-type(2){
+    margin-left:10px; 
+}
+.woo{
+    width: 142px;
+}
+
+.woo-blog {
+    width: 144px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-bottom-width: 2px;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.woo-blog a{
+    display: inline-block;
+}
+
+.woo-blog__a img{
+    width: 142px;
+    height: 142px;
+    display: block;
+    font-size: 0;
+}
+.woo-blog__a h1 {
+    padding: 8px 8px 5px;
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+}
+.woo-blog .info {
+    position: relative;
+    padding: 0 8px 5px;
+}
+.woo-blog .info .count {
+    color: #999;
+}
+.woo-blog .info .hr {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-image: -webkit-linear-gradient(top,transparent 50%,rgba(0,0,0,.12) 100%);
+    background-image: -o-linear-gradient(top,transparent 50%,rgba(0,0,0,.12) 100%);
+    background-image: linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.12) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: bottom;
+}
+.woo-blog .album {
+    position: relative;
+    padding: 8px 6px 8px 46px;
+    line-height: 30px;
+}
+.woo-blog .album .avatar {
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    background: url(https://b-ssl.duitang.com/uploads/files/201409/09/20140909171211_LMUT8.thumb.224_224_c.jpeg);
+    background-size: 100% auto;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.woo-blog .album .sender {
+    display: inline-block;
+    line-height: 1.5;
+}
+.woo-blog .album .sender .name {
+    color: #3498db;
+}
+.woo-blog .album .sender .album-name {
+    color: #333;
+}
