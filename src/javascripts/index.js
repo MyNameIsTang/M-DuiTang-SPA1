@@ -1,5 +1,5 @@
 const Router = require('./router')
-const appController = require('./controllers/app-controller')
+const appController = require('./controllers/index/app-controller')
 
 appController.render()
 

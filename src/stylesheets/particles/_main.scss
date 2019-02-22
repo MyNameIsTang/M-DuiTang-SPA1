@@ -1,0 +1,154 @@
+
+#main {
+    display: flex;
+    align-items: stretch; 
+}
+
+#app-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    .swiper-container {
+        width: 100%;
+        height:6.08rem;
+    }
+}
+.swiper-slide a{
+    position: relative;
+    display: block;
+    padding: 31% 0;
+    color:#3498bd;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 5555;
+}
+.swiper-slide .backend{
+    z-index: 6665;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .2;
+}
+.swiper-slide .desc{
+    position: absolute;
+    left: .32rem;
+    bottom: .666667rem;
+    color: #fff;
+    z-index: 6666;
+}
+.swiper-slide .desc .time{
+    display: block;
+    font-size: .32rem;
+ }
+.swiper-slide .desc .h1{
+   font-size: .533333rem;
+}
+.swiper-pagination-bullet-active{
+    background-color: rgba(0,0,0,0.8)
+}
+.app-category-list{
+    width: 100%;
+    height:4.96rem;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+.app-category-list .row{
+    width: 100%;
+    height:93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-category-list .row a{
+    width: 2.48rem;
+    font-size: .32rem;
+    padding: 5% 0;
+    color: #666;
+    text-align: center;
+}
+.app-category-list .row a .i{
+    display: inline-block;
+    background-image: url(https://b-ssl.duitang.com/uploads/people/201509/28/20150928110746_iVJh2.png);
+    background-size: 288px auto;
+    width:36px;
+    height: 36px;
+}
+.app-category-list .row:nth-of-type(1) a .lag{
+    background-position: 0 0;
+}
+.app-category-list .row:nth-of-type(1) a .lbg{
+    background-position: -36px 0;
+}
+.app-category-list .row:nth-of-type(1) a .lcg{
+    background-position: -72px 0;
+}
+.app-category-list .row:nth-of-type(1) a .ldg{
+    background-position: -108px 0;
+}
+.app-category-list .row:nth-of-type(2) a .lag{
+    background-position: -144px 0;
+}
+.app-category-list .row:nth-of-type(2) a .lbg{
+    background-position: -180px 0;
+}
+.app-category-list .row:nth-of-type(2) a .lcg{
+    background-position: -216px 0;
+}
+.app-category-list .row:nth-of-type(2) a .ldg{
+    background-position: -252px 0;
+}
+.shopping-nav{
+    width: 100%;
+    height: 1.44rem;
+    min-height:45px;
+    font-size: .48rem;
+    overflow: hidden;
+    padding-top:.133333rem;
+    z-index: 999;
+    top: 0;
+    transition: top .3s ease;
+    background-color: #f5f5f5;
+}
+.shopping-nav-warp{
+    height:1.44rem;
+    min-height: 45px;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(0,0,0,.04), 0 1px 1px 0 rgba(0,0,0,.04), 0 1px 3px 0 rgba(0,0,0,.04);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    text-align: left;
+}
+.shooping-nav-list{
+    background: #fff;
+    color: #ff7e7e;
+    position: relative;
+    width: 4.88rem;
+    height: 100%;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: .24rem;
+    border-top-right-radius: .24rem;
+    font-size: .453333rem;
+}
+.shooping-nav-list__item span:nth-of-type(2){
+    width: .56666rem;
+    height: .533333rem;
+    transform:translateY(-50%);
+    
+}
