@@ -2,9 +2,9 @@
 
 const render = () => {
     // 1. 获取视图
-    let appFooterView = require('../../views/footer/app-footer.html')
+    // let appFooterView = require('../../views/footer/app-footer.html')
     
-    $('#app #footer').html(appFooterView)     
+    // $('#app #footer').html(appFooterView)     
 }
 
 module.exports = { render }

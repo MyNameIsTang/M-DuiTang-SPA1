@@ -2,17 +2,7 @@
 #app-container {
     width: 100%;
     overflow: hidden;
-    display: flex;
-    flex-flow: column nowrap;
-    .film-controls {
-        flex-shrink: 0;
-    }
-    .film-list {
-        flex-grow: 1; flex-shrink: 1;
-        width: 100%;
-        overflow: auto;
-    }
-
+    background-color: #fff;
 }
 
 
@@ -50,16 +40,18 @@
     display: inline-block;
     color: #fff;
 }
-
+.controlflow-swb{
+    overflow: hidden;
+}
 .controlflow-masned {
     zoom: 1;
-    overflow: hidden;
     visibility: hidden;
     margin-left: auto;
     margin-right: auto;
 }
 .controlflow-pcont {
     height: 0;
+    overflow: auto;
 }
 .stpics{
     position: relative;
@@ -71,11 +63,12 @@
     list-style: none;
     float: left;
 }
-.controlflow-masned li:nth-of-type(2){
-    margin-left:10px; 
+.controlflow-masned li:nth-of-type(even){
+    margin-left:8px; 
 }
 .woo{
-    width: 142px;
+    width: 144px;
+    margin-bottom: 10px; 
 }
 
 .woo-blog {
@@ -93,7 +86,6 @@
 
 .woo-blog__a img{
     width: 142px;
-    height: 142px;
     display: block;
     font-size: 0;
 }

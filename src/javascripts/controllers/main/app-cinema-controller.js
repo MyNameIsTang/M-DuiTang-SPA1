@@ -1,5 +1,5 @@
 const appHeaderView = require('../../views/header/app-header.html')
-const appMainView = require('../../views/main/app-shopping-main.html')
+// const appMainView = require('../../views/main/app-shopping-main.html')
 const render = () => {
     // 渲染头部
     $('#app #header').html(

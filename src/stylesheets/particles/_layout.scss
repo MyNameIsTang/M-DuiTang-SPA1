@@ -3,9 +3,7 @@ body { margin: 0; padding: 0; background: #777; }
 a { color: #333; text-decoration: none; }
 html, body, #app { height: 100%; }
 #app { 
-    display: flex; 
-    // flex-wrap: wrap; 
-    flex-direction: column; justify-content: space-between; 
+    overflow: auto;
 }
 #header { 
     width: 100%;

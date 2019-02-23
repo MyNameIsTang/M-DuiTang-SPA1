@@ -6,7 +6,6 @@
 
 #app-container {
     width: 100%;
-    overflow: hidden;
     display: flex;
     flex-flow: column nowrap;
     .swiper-container {
@@ -136,7 +135,7 @@
     background: #fff;
     color: #ff7e7e;
     position: relative;
-    width: 4.88rem;
+    width: 4.4375rem;
     height: 100%;
     min-height: 45px;
     display: flex;
@@ -144,11 +143,18 @@
     justify-content: center;
     border-top-left-radius: .24rem;
     border-top-right-radius: .24rem;
-    font-size: .453333rem;
+    font-size:16px;
+}
+.shooping-nav-list-active{
+    background: #fff;
+    color: #ff7e7e;
 }
 .shooping-nav-list__item span:nth-of-type(2){
     width: .56666rem;
     height: .533333rem;
+    background-color:#ff7e7e;
+    border-radius: .15625rem;
+    color: #fff; 
+    font-size: 16px;
     transform:translateY(-50%);
-    
 }

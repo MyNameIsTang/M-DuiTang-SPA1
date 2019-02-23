@@ -1,0 +1,55 @@
+<div class="controlflow-swb">
+        <div class="controlflow-swb__controlflow"></div>
+        <ul class="controlflow-pcont controlflow-masned stpics">
+            <li>
+                {{#each oddList}}         
+                    <div class="woo">
+                        <div class="woo-blog">
+                            <a href="" class="woo-blog__a">
+                                <img referrer="no-referrer|origin|unsafe-url" src="{{photo.path}}" alt="">
+                                <h1>{{msg}}</h1>
+                                <p class="info">
+                                    <span class="count">★&nbsp;{{favorite_count}}</span>  
+                                    <span class="type"></span>
+                                    <span class="hr"></span>
+                                </p>
+                            </a>
+                            <p class="album">
+                                <a href="/people/?user_id=18171244" class="avatar" style="background-image:url({{sender.avatar}});"></a>
+                                <span class="sender">
+                                    <a href="/people/?user_id=18171244" class="name">{{sender.username}}</a>
+                                    <br>
+                                    <a href="/album/?id=90338323" class="album-name">收集到&nbsp;{{album.name}}</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                {{/each}}
+            </li>
+            <li>
+                {{#each evenList}}
+                    <div class="woo">
+                        <div class="woo-blog">
+                            <a href="" class="woo-blog__a">
+                                <img referrer="no-referrer|origin|unsafe-url" src="{{photo.path}}" alt="">
+                                <h1>{{msg}}</h1>
+                                <p class="info">
+                                    <span class="count">★&nbsp;{{favorite_count}}</span>  
+                                    <span class="type"></span>
+                                    <span class="hr"></span>
+                                </p>
+                            </a>
+                            <p class="album">
+                                <a href="/people/?user_id=18171244" class="avatar" style="background-image:url({{sender.avatar}});"></a>
+                                <span class="sender">
+                                    <a href="/people/?user_id=18171244" class="name">{{sender.username}}</a>
+                                    <br>
+                                    <a href="/album/?id=90338323" class="album-name">收集到&nbsp;默认专辑</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                {{/each}}
+            </li>
+        </ul>
+</div>

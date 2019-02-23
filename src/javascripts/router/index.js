@@ -36,7 +36,7 @@ class routerInstance {
         this.handlerNavLink(path);
     }
     checkedHash(hashData) { 
-        return hashData = hashData.indexOf('?') === -1 ? false  : hashData.split('?')[1].split("&")[0];
+        return hashData = hashData.indexOf('?') === -1 ? false  : hashData.split('=')[1].split("&")[0];
     }
     initialAction () { // 初始时判断有无hash等动作
         let path = decodeURI(location.hash.replace('#', ''));

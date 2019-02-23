@@ -209,9 +209,7 @@ html, body, #app {
   height: 100%; }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  overflow: auto; }
 
 #header {
   width: 100%;
@@ -321,15 +319,7 @@ button {
 #app-container {
   width: 100%;
   overflow: hidden;
-  display: flex;
-  flex-flow: column nowrap; }
-  #app-container .film-controls {
-    flex-shrink: 0; }
-  #app-container .film-list {
-    flex-grow: 1;
-    flex-shrink: 1;
-    width: 100%;
-    overflow: auto; }
+  background-color: #fff; }
 
 /* 内容顶部控制区域 */
 .conten-list__title {
@@ -363,15 +353,18 @@ button {
   display: inline-block;
   color: #fff; }
 
+.controlflow-swb {
+  overflow: hidden; }
+
 .controlflow-masned {
   zoom: 1;
-  overflow: hidden;
   visibility: hidden;
   margin-left: auto;
   margin-right: auto; }
 
 .controlflow-pcont {
-  height: 0; }
+  height: 0;
+  overflow: auto; }
 
 .stpics {
   position: relative;
@@ -383,11 +376,12 @@ button {
   list-style: none;
   float: left; }
 
-.controlflow-masned li:nth-of-type(2) {
-  margin-left: 10px; }
+.controlflow-masned li:nth-of-type(even) {
+  margin-left: 8px; }
 
 .woo {
-  width: 142px; }
+  width: 144px;
+  margin-bottom: 10px; }
 
 .woo-blog {
   width: 144px;
@@ -402,7 +396,6 @@ button {
 
 .woo-blog__a img {
   width: 142px;
-  height: 142px;
   display: block;
   font-size: 0; }
 
@@ -465,7 +458,6 @@ button {
 
 #app-container {
   width: 100%;
-  overflow: hidden;
   display: flex;
   flex-flow: column nowrap; }
   #app-container .swiper-container {
@@ -594,7 +586,7 @@ button {
   background: #fff;
   color: #ff7e7e;
   position: relative;
-  width: 4.88rem;
+  width: 4.4375rem;
   height: 100%;
   min-height: 45px;
   display: flex;
@@ -602,9 +594,17 @@ button {
   justify-content: center;
   border-top-left-radius: .24rem;
   border-top-right-radius: .24rem;
-  font-size: .453333rem; }
+  font-size: 16px; }
+
+.shooping-nav-list-active {
+  background: #fff;
+  color: #ff7e7e; }
 
 .shooping-nav-list__item span:nth-of-type(2) {
   width: .56666rem;
   height: .533333rem;
+  background-color: #ff7e7e;
+  border-radius: .15625rem;
+  color: #fff;
+  font-size: 16px;
   transform: translateY(-50%); }
