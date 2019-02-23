@@ -6,4 +6,5 @@ appController.render()
 // 初始化路由
 new Router({
     initial: '/index'
+   
 }).init()

@@ -1,9 +1,5 @@
 
 #app-container {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-flow: column nowrap;
     .film-controls {
         flex-shrink: 0;
     }

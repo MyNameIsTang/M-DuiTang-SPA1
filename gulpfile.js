@@ -1,6 +1,8 @@
 // gulp的操作: 创建任务，任务中处理文件和代码，执行任务 task,src,dest,pipe,watch
 const gulp = require('gulp')
 const webserver = require('gulp-webserver')
+// const connect = require('gulp-connect')
+const proxy = require('http-proxy-middleware')
 const watch = require('gulp-watch')
 const pathUtil = require('path')
 const sass = require('gulp-sass')
@@ -8,8 +10,8 @@ const del = require('del')
 const webpack = require('webpack-stream')
 // 解构出来的配置文件
 const { 
-    serverConfig,
-    webpackConfig 
+    webpackConfig,
+    serverConfig
 } = require('./config')
 
 // 迁移static资源
@@ -43,6 +45,33 @@ gulp.task('server', () => {
     return gulp.src('dist')
             .pipe(webserver(serverConfig))
 })
+
+// gulp.task('connect', () => {
+//     connect.server({
+//         root : './',
+//         livereload : true,
+//         port : 3000,
+//         middleware : function (connect, opt){
+//             return [
+//                 proxy('/duitang',{
+//                     target: 'https://www.duitang.com/',
+//                     changeOrigin: true,
+//                     pathRewrite: { // 去掉暗号
+//                         '^/duitang': ''
+//                     }
+//                 }),
+//                 proxy('/buy.duitang',{
+//                     target: 'https://buy.duitang.com/',
+//                     changeOrigin: true,
+//                     pathRewrite: { // 去掉暗号
+//                         '^/buy.duitang': ''
+//                     }
+//                 })
+//             ]
+//         }
+//      })
+
+// })
 
 
 // watch
