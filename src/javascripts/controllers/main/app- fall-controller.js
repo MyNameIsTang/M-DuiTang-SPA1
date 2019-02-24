@@ -1,5 +1,5 @@
-const appFallView = require('../../views/main/app-fall.html');
 
+const appFallView = require('../../views/main/app-fall.html');
 const render = (fallData) => { 
   console.log(fallData.data.object_list);
   let object_list = oddOrEvenList(fallData.data.object_list);

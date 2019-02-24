@@ -11,9 +11,9 @@ const getFlowList = (fallData) => {
 //首页瀑布流数据
 const getHomeFlowList = () => {
     return api.request({ url: '/napi/index/hot/?start=0&include_fields=sender%2Calbum&limit=24&_=1550922364434', code : '/duitang'})
-    //商品列表数据
 }
-
+console.log(getHomeFlowList)
+    //商品列表数据
 const getShoppingList = () =>{
     return api.request({url:'/napi/guide/stream/list/?limit=12&timestamp=1550888879000', code : '/buy.duitang'})
 }
