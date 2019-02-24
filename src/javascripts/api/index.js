@@ -1,10 +1,10 @@
 // 封装api是为了统一处理跨域路径 还有 对请求回来的数据的处理
 const api = {
     request ({
-        url, data, methods
+        url, code, data, methods
     }, mock) {
         return $.ajax({
-            url: (mock ? '' : '/duitang' ) + url,
+            url: (mock ? '' : code ) + url,
             data: data || {},
             methods: methods || 'get',
             success: (res) => {

@@ -1,0 +1,73 @@
+<main id="app-container">
+    <section class="shopping-nav">
+        <div class="shopping-nav-warp">
+                <div class="shooping-nav-list shooping-nav-list-active">
+                    <div class="shooping-nav-list__item">
+                        <span>超省钱指南</span>
+                        <span>新</span>
+                        <span class="shooping-nav-list__item-active"></span>
+                    </div>
+                </div>
+                <div class="shooping-nav-list">
+                        <div class="shooping-nav-list__item">
+                                <span>商品</span>
+                                <span></span>
+                            </div>
+                </div>
+        </div>
+        <div class="shopping-commodity-list">
+            <div class="bag-log">
+                <a href="#">
+                    <img src="https://a-ssl.duitang.com/uploads/people/201608/24/20160824105128_SEayw.png" alt="">
+                </a>
+            </div>
+            <div class="shopping-commodity-introduced">
+                <a class="shopping-commodity-money">
+                    <i class="shopping-commodity-icon"></i>
+                    <h5>搜省钱</h5>
+                    <span>你喜欢的商品都有隐藏好券</span>
+                </a>
+                <div class="shopping-commodity-menu">
+                    <div class="shopping-line">
+                        <i></i>
+                        <div>
+                            <h5>春装专场</h5>
+                            <span>热卖春装优惠券不定时更新</span>
+                        </div>
+                    </div>
+                    <div class="shopping-space">
+                         <i></i>
+                            <div>
+                                <h5>春装专场</h5>
+                                <span>热卖春装优惠券不定时更新</span>
+                            </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div class="shopping-list-details">
+            <h4>超值好券</h4>
+            <p>每天为你更新淘宝隐藏优惠券</p>
+            <div class="shopping-list-details__item">
+                <div class="shopping-auto">
+                {{#each shoppings}}
+                <a href="#" class="shopping-list-details-item__link">
+                    <img src="{{pic}}" alt="">
+                    <div class="shopping-list-details__message">
+                        <h5>{{title}}</h5>
+                        <div class="shopping-list__price">
+                            <span>￥{{discount_value}}</span>
+                            <span>￥{{original_price}}</span>
+                        </div>
+                        <div class="shopping-list__coupons">
+                            <span class="shopping-list__coupons__comment">淘宝</span>
+                            <span class="shopping-list__coupons__comment">领{{discount_value}}元券</span>
+                        </div>
+                    </div>
+                </a>
+                {{/each}}
+            </div>
+            </div>
+        </div>
+    </section>
+</main>

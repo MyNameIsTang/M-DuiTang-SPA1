@@ -7,15 +7,22 @@ const serverConfig = {
     directoryListing: false,
     open: false,
     port: 3000,
-    middleware: [ // 中间件 http-proxy-middleware
-        proxy('/duitang', {
-            target: 'https://www.duitang.com/',
-            changeOrigin: true,
-            pathRewrite: { // 去掉暗号
-                '^/duitang': ''
-            }
-        })
-    ],
+    middleware :[
+            proxy('/duitang',{
+                target: 'https://www.duitang.com/',
+                changeOrigin: true,
+                pathRewrite: { // 去掉暗号
+                    '^/duitang': ''
+                }
+            }),
+            proxy('/buy.duitang',{
+                target: 'https://buy.duitang.com/',
+                changeOrigin: true,
+                pathRewrite: { // 去掉暗号
+                    '^/buy.duitang': ''
+                }
+            })
+        ],
     proxies: [
         // { source: '/api', target: '' }
     ]

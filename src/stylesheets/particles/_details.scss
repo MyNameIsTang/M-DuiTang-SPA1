@@ -1,8 +1,14 @@
 
 #app-container {
-    width: 100%;
-    overflow: hidden;
-    background-color: #fff;
+    .film-controls {
+        flex-shrink: 0;
+    }
+    .film-list {
+        flex-grow: 1; flex-shrink: 1;
+        width: 100%;
+        overflow: auto;
+    }
+
 }
 
 
@@ -40,9 +46,6 @@
     display: inline-block;
     color: #fff;
 }
-.controlflow-swb{
-    overflow: hidden;
-}
 .controlflow-masned {
     zoom: 1;
     visibility: hidden;
@@ -51,13 +54,11 @@
 }
 .controlflow-pcont {
     height: 0;
-    overflow: auto;
 }
 .stpics{
     position: relative;
     width: 296px;
     visibility: visible;
-    height: 3603px;
 }
 .controlflow-masned li{
     list-style: none;
