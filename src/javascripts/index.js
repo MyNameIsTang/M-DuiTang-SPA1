@@ -1,10 +1,9 @@
 const Router = require('./router')
-const appController = require('./controllers/index/app-controller')
+const appIndexController = require('./controllers/index/app-index-controller')
 
-appController.render()
+appIndexController.render()
 
 // 初始化路由
 new Router({
-    initial: '/index'
-   
-}).init()
+  initial: '/index'
+}).init();

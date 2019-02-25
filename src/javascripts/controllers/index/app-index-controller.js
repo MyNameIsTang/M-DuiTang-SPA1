@@ -3,6 +3,7 @@ const { getBannerList, getFlowList, getHomeFlowList } = require('../../models/ap
 const appHeaderView = require('../../views/header/app-header.html');
 const appMainView = require('../../views/main/app-main.html');
 const appFallController = require('../main/app- fall-controller');
+const util = require('../main/app-util');
 
 const render = async () => {
     $('.loading').removeClass('hide')// 显示加载
@@ -39,8 +40,8 @@ const render = async () => {
 }
 function conversionData(params) {
   params.forEach(item => {
-    return item.image = item.image.replace(/.jpeg/,'.thumb.600_0_c.jpeg');
-  })
+    item.image = util.checkedIamgePath(item.image, '.thumb.600_0_c');
+  });
   return params;
 }
 

@@ -1,4 +1,5 @@
 const appFallView = require('../../views/main/app-fall.html');
+const util = require('./app-util');
 
 const render = (fallData) => { 
   console.log(fallData.data.object_list);
@@ -7,12 +8,13 @@ const render = (fallData) => {
   $('#app #waterFall').html(template({oddList : object_list.oddList, evenList:object_list.evenList}))
 }
 
+
 function oddOrEvenList(params) {
   let oddList = [];
   let evenList = [];
   params.forEach((item, index) => {
-    item.photo.path = checkedIamgePath(item.photo.path, '.thumb.300_0');
-    item.sender.avatar = checkedIamgePath(item.sender.avatar, '.thumb.100_100_c');
+    item.photo.path = util.checkedIamgePath(item.photo.path, '.thumb.300_0');
+    item.sender.avatar = util.checkedIamgePath(item.sender.avatar, '.thumb.100_100_c');
     if (index % 2 === 0) {
       evenList.push(item);
     } else { 
@@ -20,18 +22,5 @@ function oddOrEvenList(params) {
     }
   });
   return {oddList : oddList, evenList : evenList };
-}
-function checkedIamgePath(src,options) {
-  let imfSrc = '';
-  if (src.indexOf('.jpg') > 0) {
-    imfSrc ='https://images.weserv.nl/?url=' + src.replace(/.jpg/, options+'.jpg');
-  } else if (src.indexOf('.jpeg') > 0) {
-    imfSrc ='https://images.weserv.nl/?url=' + src.replace(/.jpeg/, options+'.jpeg');
-  } else if (src.indexOf('.gif_jpeg') > 0) { 
-    imfSrc ='https://images.weserv.nl/?url=' + src.replace(/.gif_jpeg/, options+'.gif_jpeg');
-  } else { 
-    imfSrc = 'https://images.weserv.nl/?url=' + src.replace(/.png/, options+'.png');
-  }
-  return imfSrc;
 }
 module.exports = { render };

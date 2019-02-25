@@ -13,9 +13,9 @@ class Router {
 }
 
 class routerInstance {
-    constructor() {
+    constructor({ initial }) {
         this.routes = routes;// 路由表
-        this.initial = '#/index'; // 默认路由
+        this.initial = initial; // 默认路由
     }
 
     init () {
@@ -53,9 +53,9 @@ class routerInstance {
             if ( handler ) {
                 this.refreshRouter(path); 
             } else {
-                // // 如果路由表中没有这个路由，跳转到默认路由
-                // location.hash = '/404'
-                // location.hash = this.initial
+                // 如果路由表中没有这个路由，跳转到默认路由
+                location.hash = '/404'
+                location.hash = this.initial
             }
         })
     }
