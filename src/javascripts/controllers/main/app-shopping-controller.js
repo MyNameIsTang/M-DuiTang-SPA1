@@ -1,7 +1,8 @@
 const { getBannerList, getFlowList,getChangeist, getTestMock,getShoppingList} = require('../../models/app-index-model');
 const appHeaderView = require('../../views/header/app-header.html')
 const appShoppingsView = require('../../views/main/shoppings/app-shopping-main.html');
-
+//滚动设置
+    let BScroll= require('better-scroll').default
     const render = async () => {
         $('.loading').removeClass('hide')// 显示加载
         // 渲染头部
@@ -13,7 +14,18 @@ const appShoppingsView = require('../../views/main/shoppings/app-shopping-main.h
         let template = Handlebars.compile(appShoppingsView)
         $('#app #main').html(template({ shoppings :conversionData(changeList.data.object_list)}))
         $('.loading').addClass('hide');// 显示加载
+        let better=new BScroll('.shopping-nav',{
+          pullUpLoad:{
+              threshold:50
+          }
+        })
+        better.on('pullingUp',function(){
+          console.log(123)
+          conversionData();
+          
+        })
     }
+    
     function conversionData(params) {
       params.forEach(item => {
         return item.pic = item.pic.replace(/.jpeg/,'.thumb.200_0_c.jpeg');

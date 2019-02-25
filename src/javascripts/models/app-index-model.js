@@ -15,7 +15,7 @@ const getHomeFlowList = () => {
 console.log(getHomeFlowList)
     //商品列表数据
 const getShoppingList = () =>{
-    return api.request({url:'/napi/guide/stream/list/?limit=12&timestamp=1550888879000', code : '/buy.duitang'})
+    return api.request({url:`/napi/guide/stream/list/?start=0&limit=12&timestamp=1551016513000`, code : '/buy.duitang'})
 }
 
 //切换hash值之后改变的值;
