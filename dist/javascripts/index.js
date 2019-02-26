@@ -119,6 +119,17 @@ eval("const appFallView = __webpack_require__(/*! ../../views/main/app-fall.html
 
 /***/ }),
 
+/***/ "./src/javascripts/controllers/main/app-buy-controller.js":
+/*!****************************************************************!*\
+  !*** ./src/javascripts/controllers/main/app-buy-controller.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const appHeaderView = __webpack_require__(/*! ../../views/header/app-header.html */ \"./src/javascripts/views/header/app-header.html\");\r\nconst appStoreController = __webpack_require__(/*! ./app-store-controller */ \"./src/javascripts/controllers/main/app-store-controller.js\");\r\nconst appShoppingController = __webpack_require__(/*! ./app-store-controller */ \"./src/javascripts/controllers/main/app-store-controller.js\");\r\n\r\nlet targetType = 'shop';\r\nconst render = async () => {\r\n  $('.loading').removeClass('hide')// 显示加载\r\n\r\n  $('#app #header').html(\r\n    Handlebars.compile(appHeaderView)({ title: '堆  糖' })\r\n  );\r\n  \r\n  controlTypes();\r\n\r\n  contenRenderHandler();\r\n\r\n  $('.loading').addClass('hide');// 显示加载\r\n} \r\n\r\nfunction controlTypes() { \r\n  $('.shooping-nav-list').click(function () {\r\n    console.log(this);\r\n  });\r\n}\r\n\r\nfunction contenRenderHandler() { \r\n  if (targetType === 'shop') {\r\n    appShoppingController.render();\r\n    return false;\r\n  }\r\n  appStoreController.render();\r\n}\r\n\r\nmodule.exports = { render };\n\n//# sourceURL=webpack:///./src/javascripts/controllers/main/app-buy-controller.js?");
+
+/***/ }),
+
 /***/ "./src/javascripts/controllers/main/app-details-controller.js":
 /*!********************************************************************!*\
   !*** ./src/javascripts/controllers/main/app-details-controller.js ***!
@@ -130,14 +141,14 @@ eval("\r\nconst { getBannerList, getFlowList, getChangeist, getTestMock } = __we
 
 /***/ }),
 
-/***/ "./src/javascripts/controllers/main/app-shopping-controller.js":
-/*!*********************************************************************!*\
-  !*** ./src/javascripts/controllers/main/app-shopping-controller.js ***!
-  \*********************************************************************/
+/***/ "./src/javascripts/controllers/main/app-store-controller.js":
+/*!******************************************************************!*\
+  !*** ./src/javascripts/controllers/main/app-store-controller.js ***!
+  \******************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("const { getBannerList, getFlowList,getChangeist, getTestMock,getShoppingList} = __webpack_require__(/*! ../../models/app-index-model */ \"./src/javascripts/models/app-index-model.js\");\r\nconst appHeaderView = __webpack_require__(/*! ../../views/header/app-header.html */ \"./src/javascripts/views/header/app-header.html\")\r\nconst appShoppingsView = __webpack_require__(/*! ../../views/main/shoppings/app-shopping-main.html */ \"./src/javascripts/views/main/shoppings/app-shopping-main.html\");\r\nconst util = __webpack_require__(/*! ./app-util */ \"./src/javascripts/controllers/main/app-util.js\");\r\n\r\n    const render = async () => {\r\n        $('.loading').removeClass('hide')// 显示加载\r\n        // 渲染头部\r\n      $('#app #header').html(\r\n        Handlebars.compile(appHeaderView)({ title: '堆  糖' })\r\n      )\r\n        let shoppingList = await getShoppingList();\r\n        console.log(shoppingList.data.object_list)\r\n        let template = Handlebars.compile(appShoppingsView)\r\n        $('#app #main').html(template({ shoppings :conversionData(shoppingList.data.object_list)}))\r\n        $('.loading').addClass('hide');// 显示加载\r\n    }\r\n    function conversionData(params) {\r\n      params.forEach(item => {\r\n         item.pic = util.checkedIamgePath(item.pic,'.thumb.200_0_c');\r\n      })\r\n      return params;\r\n    }\r\nmodule.exports = { render }\n\n//# sourceURL=webpack:///./src/javascripts/controllers/main/app-shopping-controller.js?");
+eval("\n\n//# sourceURL=webpack:///./src/javascripts/controllers/main/app-store-controller.js?");
 
 /***/ }),
 
@@ -192,7 +203,7 @@ eval("// 准备开发router\r\nlet routes = __webpack_require__(/*! ./routes */ 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\r\nconst appIndexController = __webpack_require__(/*! ../controllers/index/app-index-controller */ \"./src/javascripts/controllers/index/app-index-controller.js\");\r\nconst appShoopingController = __webpack_require__(/*! ../controllers/main/app-shopping-controller */ \"./src/javascripts/controllers/main/app-shopping-controller.js\");\r\nconst appDetailsController = __webpack_require__(/*! ../controllers/main/app-details-controller */ \"./src/javascripts/controllers/main/app-details-controller.js\");\r\n\r\n// 路由表\r\nlet routes = {\r\n  '/index': appIndexController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000003&title=良品购': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000007&title=美食菜谱': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000004&title=家居生活': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000008&title=壁纸': appDetailsController.render,\r\n  '/blog/list/category/?id=540ea7ed586df58a31a135d2&title=头像': appDetailsController.render,\r\n  '/blog/list/category/?id=540ead31586df58a2bef4d7a&title=表情': appDetailsController.render,\r\n  '/shopping': appShoopingController.render,\r\n  '/404': () => {  }\r\n}\r\n\r\nmodule.exports = routes;\n\n//# sourceURL=webpack:///./src/javascripts/router/routes.js?");
+eval("\r\nconst appIndexController = __webpack_require__(/*! ../controllers/index/app-index-controller */ \"./src/javascripts/controllers/index/app-index-controller.js\");\r\nconst appBuyController = __webpack_require__(/*! ../controllers/main/app-buy-controller */ \"./src/javascripts/controllers/main/app-buy-controller.js\");\r\nconst appDetailsController = __webpack_require__(/*! ../controllers/main/app-details-controller */ \"./src/javascripts/controllers/main/app-details-controller.js\");\r\n\r\n// 路由表\r\nlet routes = {\r\n  '/index': appIndexController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000003&title=良品购': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000007&title=美食菜谱': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000004&title=家居生活': appDetailsController.render,\r\n  '/blog/list/category/?id=5017d172705cbe10c0000008&title=壁纸': appDetailsController.render,\r\n  '/blog/list/category/?id=540ea7ed586df58a31a135d2&title=头像': appDetailsController.render,\r\n  '/blog/list/category/?id=540ead31586df58a2bef4d7a&title=表情': appDetailsController.render,\r\n  '/shopping': appBuyController.render,\r\n  '/404': () => {  }\r\n}\r\n\r\nmodule.exports = routes;\n\n//# sourceURL=webpack:///./src/javascripts/router/routes.js?");
 
 /***/ }),
 
@@ -237,17 +248,6 @@ eval("module.exports = \"<main id=\\\"app-container\\\">        <section class=\
 /***/ (function(module, exports) {
 
 eval("module.exports = \"<main id=\\\"app-container\\\">    <section class=\\\"conten\\\">        <!-- 详情页title -->        <div>            <section class=\\\"conten-list__title\\\">                <div class=\\\"conten-list__title--bg\\\"></div>                <div class=\\\"conten-list__title__category\\\">                    {{#each sub_cates}}                        <a href=\\\"#/blog/list/category/?id={{id}}path={{path}}\\\">#{{name}}</a>                    {{/each}}                </div>            </section>        </div>    </section>    <section class=\\\"controlflow\\\" id=\\\"waterFall\\\">            </section></main>\"\n\n//# sourceURL=webpack:///./src/javascripts/views/main/details/app-details.html?");
-
-/***/ }),
-
-/***/ "./src/javascripts/views/main/shoppings/app-shopping-main.html":
-/*!*********************************************************************!*\
-  !*** ./src/javascripts/views/main/shoppings/app-shopping-main.html ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<main id=\\\"app-container\\\">    <section class=\\\"shopping-nav\\\">        <div class=\\\"shopping-nav-warp\\\">            <div class=\\\"shooping-nav-list shooping-nav-list-active\\\">                <div class=\\\"shooping-nav-list__item\\\">                    <span>超省钱指南</span>                    <span>新</span>                    <span class=\\\"shooping-nav-list__item-active\\\"></span>                </div>            </div>            <div class=\\\"shooping-nav-list\\\">                <div class=\\\"shooping-nav-list__item\\\">                    <span>商品</span>                    <span></span>                </div>            </div>        </div>        <div class=\\\"shopping-commodity-list\\\">            <div class=\\\"bag-log\\\">                <a href=\\\"#\\\">                    <img src=\\\"https://a-ssl.duitang.com/uploads/people/201608/24/20160824105128_SEayw.png\\\" alt=\\\"\\\">                </a>            </div>            <div class=\\\"shopping-commodity-introduced\\\">                <a class=\\\"shopping-commodity-money\\\">                    <i class=\\\"shopping-commodity-icon\\\"></i>                    <h5>搜省钱</h5>                    <span>你喜欢的商品都有隐藏好券</span>                </a>                <div class=\\\"shopping-commodity-menu\\\">                    <div class=\\\"shopping-line\\\">                        <i></i>                        <div>                            <h5>春装专场</h5>                            <span>热卖春装优惠券不定时更新</span>                        </div>                    </div>                    <div class=\\\"shopping-space\\\">                        <i></i>                        <div>                            <h5>春装专场</h5>                            <span>热卖春装优惠券不定时更新</span>                        </div>                    </div>                    </div>            </div>        </div>        <div class=\\\"shopping-list-details\\\">            <h4>超值好券</h4>            <p>每天为你更新淘宝隐藏优惠券</p>            <div class=\\\"shopping-list-details__item\\\">                <div class=\\\"shopping-auto\\\">                {{#each shoppings}}                <a href=\\\"#\\\" class=\\\"shopping-list-details-item__link\\\">                    <img referrer=\\\"no-referrer|origin|unsafe-url\\\" src=\\\"{{pic}}\\\" alt=\\\"\\\">                    <div class=\\\"shopping-list-details__message\\\">                        <h5>{{title}}</h5>                        <div class=\\\"shopping-list__price\\\">                            <span>￥{{discount_value}}</span>                            <span>￥{{original_price}}</span>                        </div>                        <div class=\\\"shopping-list__coupons\\\">                            <span class=\\\"shopping-list__coupons__comment\\\">淘宝</span>                            <span class=\\\"shopping-list__coupons__comment\\\">领{{discount_value}}元券</span>                        </div>                    </div>                </a>                {{/each}}            </div>            </div>        </div>    </section></main>\"\n\n//# sourceURL=webpack:///./src/javascripts/views/main/shoppings/app-shopping-main.html?");
 
 /***/ })
 

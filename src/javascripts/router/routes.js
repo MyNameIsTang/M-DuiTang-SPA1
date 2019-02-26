@@ -1,6 +1,6 @@
 
 const appIndexController = require('../controllers/index/app-index-controller');
-const appShoopingController = require('../controllers/main/app-shopping-controller');
+const appBuyController = require('../controllers/main/app-buy-controller');
 const appDetailsController = require('../controllers/main/app-details-controller');
 
 // 路由表
@@ -12,7 +12,7 @@ let routes = {
   '/blog/list/category/?id=5017d172705cbe10c0000008&title=壁纸': appDetailsController.render,
   '/blog/list/category/?id=540ea7ed586df58a31a135d2&title=头像': appDetailsController.render,
   '/blog/list/category/?id=540ead31586df58a2bef4d7a&title=表情': appDetailsController.render,
-  '/shopping': appShoopingController.render,
+  '/shopping': appBuyController.render,
   '/404': () => {  }
 }
 
